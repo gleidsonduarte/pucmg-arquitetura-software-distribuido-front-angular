@@ -1,0 +1,10 @@
+<div class="person__search">
+  <div class="input-group">
+    <div class="form-outline">
+      <input class="form-control" type="search" placeholder="Pesquisar pelo nome" [(ngModel)]="personName" (keypress)="findPersonByName(personName)">
+    </div>
+    <button class="btn btn-primary" type="button" (click)="findPersonByName(personName)">
+      <fa-icon [icon]="['fas', 'search']"></fa-icon>
+    </button>
+  </div>
+</div>

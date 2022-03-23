@@ -1,0 +1,102 @@
+<button class="person__button btn btn-primary" (click)="openingModal()">Novo {{ title }}</button>
+<div class="person__modal modal fade" id="personModal" tabindex="-1" role="dialog" aria-labelledby="personModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="person__header modal-header modal-header">
+        <h5 class="modal-title" id="personModalTitle">{{ title }}</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="person__body modal-body row">
+        <app-alert-message [alertMessage]="alertMessage"></app-alert-message>
+        <input id="id" type="hidden">
+        <div class="col-6 mb-3">
+          <label for="first-name" class="form-check-label">Nome</label>
+          <input id="first-name" class="person__input form-control" type="text" placeholder="Digite o nome">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="last-name" class="form-check-label">Sobrenome</label>
+          <input id="last-name" class="person__input form-control" type="text" placeholder="Digite o sobrenome">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="cpf" class="form-check-label">CPF</label>
+          <input id="cpf" class="person__input form-control" type="number" placeholder="Digite o CPF">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="birth-date" class="form-check-label">Data de nascimento</label>
+          <input id="birth-date" class="person__input form-control" type="date">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="public-area" class="form-check-label">Rua</label>
+          <input id="public-area" class="person__input form-control" type="text" disabled>
+        </div>
+        <div class="col-6 mb-3">
+          <label for="city" class="form-check-label">Cidade</label>
+          <input id="city" class="person__input form-control" type="text" disabled>
+        </div>
+        <div class="col-6 mb-3">
+          <label for="state" class="form-check-label">Estado</label>
+          <input id="state" class="person__input form-control" type="text" disabled>
+        </div>
+        <div class="col-6 mb-3">
+          <label for="cep" class="form-check-label">CEP</label>
+          <input #cep id="cep" class="person__input form-control" type="text" placeholder="Digite o CEP" (blur)="searchCEP(cep.value)">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="phone-number" class="form-check-label">Telefone</label>
+          <input id="phone-number" class="person__input form-control" type="text" placeholder="Digite o telefone">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="cell-number" class="form-check-label">Celular</label>
+          <input id="cell-number" class="person__input form-control" type="text" placeholder="Digite o celular">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="email" class="form-check-label">E-mail</label>
+          <input id="email" class="person__input form-control" type="email" placeholder="Digite o email">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="education" class="form-check-label">Escolaridade</label>
+          <select id="education" class="person__input form-select">
+            <option value="elementary_school" selected>Ensino Fundamental</option>
+            <option value="high_schol">Ensino Medio</option>
+            <option value="associates_degree">Ensimo Técnico</option>
+            <option value="bachelors_degree">Graduacao</option>
+            <option value="masters_degree">Mestrado</option>
+            <option value="doctorate_degree">Doutorado</option>
+          </select>
+        </div>
+        <div class="col-6 mb-3">
+          <label for="marital-status" class="form-check-label">Estado Civil</label>
+          <select id="marital-status" class="person__input form-select">
+            <option value="single" selected>Solteiro(a)</option>
+            <option value="engaged">Namorando</option>
+            <option value="civil_union">Uniao Civil</option>
+            <option value="married">Casado(a)</option>
+            <option value="separated">Separado(a)</option>
+            <option value="divorced">Divorceado(a)</option>
+            <option value="widowed">Viuvo(a)</option>
+          </select>
+        </div>
+        <div class="col-6 mb-3">
+          <div class="form-check">
+            <input id="gender_male" class="form-check-input" name="gender" value="male" type="radio">
+            <label for="gender_male" class="person__input form-check-label">Masculino</label>
+          </div>
+          <div class="form-check">
+            <input id="gender_female" class="form-check-input" name="gender" value="female" type="radio">
+            <label for="gender_female" class="person__input form-check-label">Feminino</label>
+          </div>
+          <div class="form-check">
+            <input id="gender_other" class="form-check-input" name="gender" value="other" type="radio" checked>
+            <label for="gender_other" class="person__input form-check-label">Outro</label>
+          </div>
+        </div>
+        <ng-content></ng-content>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" (click)="savePerson()" type="button">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>

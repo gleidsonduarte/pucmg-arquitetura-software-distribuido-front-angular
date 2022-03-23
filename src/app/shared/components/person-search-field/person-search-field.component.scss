@@ -1,0 +1,10 @@
+.person__search {
+  float: left;
+  margin: 2.5vh 2.5vw;
+  min-width: 248px;
+
+  @media screen and (max-width: 600px) {
+    float: none;
+    margin-left: calc((100% - 248px) / 2);
+  }
+}

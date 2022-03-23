@@ -1,0 +1,29 @@
+.person-table {
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__table {
+    width: 80vw;
+  }
+
+  &__actions {
+    text-align: center;
+    vertical-align: middle;
+
+    fa-icon {
+      margin: 0.7vw;
+    }
+  }
+
+  &__edit {
+    cursor: pointer;
+    color: blue;
+  }
+
+  &__delete {
+    cursor: pointer;
+    color: red;
+  }
+}
