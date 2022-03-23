@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card__body p-4">
+    <form #form="ngForm" (ngSubmit)="login()">
+      <h4 class="card__title">Entrar na conta</h4>
+      <div class="card__item form-group">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" class="form-control" type="email" [(ngModel)]="user.email" requiredminlength="5">
+      </div>
+      <div class="card__item form-group">
+        <label for="senha">Senha</label>
+        <input id="password" name="password" class="form-control" type="password" [(ngModel)]="user.password" requiredminlength="6">
+      </div>
+      <div class="card__item form-group">
+        <button id="login" class="btn btn-primary btn-block col-6" type="submit" [disabled]="form.form.invalid">Entrar</button>
+        <button id="create-account" class="btn btn-link btn-block col-6" type="button" [routerLink]="['/create-account']">Criar conta</button>
+        <app-alert-message [alertMessage]="alertMessage"></app-alert-message>
+      </div>
+    </form>
+  </div>
+</div>
+<button id="forgot-password" class="btn btn-link btn-block col-12" type="button" [routerLink]="['/forgot-password']">Recuperar senha</button>
