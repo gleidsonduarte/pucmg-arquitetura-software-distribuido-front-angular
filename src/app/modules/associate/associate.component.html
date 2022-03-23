@@ -1,0 +1,18 @@
+<app-person-search-field [findPersonByName]="findPersonByName"></app-person-search-field>
+
+<app-person-modal [title]="title" [savePerson]="savePerson" [alertMessage]="alertMessage">
+  <div class="col-6 mb-3">
+    <label for="blood-group" class="form-check-label">Tipo Sanguíneo</label>
+    <input id="blood-group" class="person__input form-control" type="text" placeholder="Digite o seu tipo sanguíneo">
+  </div>
+  <div class="col-6 mb-3">
+    <label for="chronic-conditions" class="form-check-label">Doenças Hereditárias</label>
+    <input id="chronic-conditions" class="person__input form-control" type="text" placeholder="Digite suas doenças hereditárias">
+  </div>
+  <div class="col-6 mb-3">
+    <label for="allergies" class="form-check-label">Alergias</label>
+    <input id="allergies" class="person__input form-control" type="text" placeholder="Digite suas alergias">
+  </div>
+</app-person-modal>
+
+<app-person-table [persons]="persons" [editPerson]="editPerson" [deletePerson]="deletePerson"></app-person-table>
