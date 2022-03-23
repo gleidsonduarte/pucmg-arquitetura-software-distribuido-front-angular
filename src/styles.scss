@@ -1,0 +1,39 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './variables.scss';
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  font-size: 1.5vw;
+  color: gray;
+
+  @media screen and (max-width: 600px) {
+    font-size: 2.5vw;
+  }
+}
+
+h3, h4 {
+  font-size: 1.5vw;
+
+  @media screen and (max-width: 600px) {
+    font-size: 2.5vw;
+  }
+}
+
+.card {
+  min-width: 150px;
+  max-width: 350px;
+
+  &__body {
+    background-color: white;
+    color: gray;
+
+    div {
+      margin: 10px 0;
+    }
+  }
+}
