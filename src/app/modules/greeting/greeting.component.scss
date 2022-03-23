@@ -1,0 +1,14 @@
+.greeting {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 85vw;
+  padding-top: 10vh;
+
+  &__message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 77vw;
+  }
+}
